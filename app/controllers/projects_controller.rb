@@ -14,12 +14,9 @@ class ProjectsController < ApplicationController
 			flash[:notice] = "Project has been created."
 			redirect_to @project
 		else
-			#nothing
+			flash.now[:alert] = "Project has not been created."
+			render "new"
 		end
-
-		#debug test learn
-		# # @my_local_var = 'Hung Do'
-		# params
 	end
 
 	def show
